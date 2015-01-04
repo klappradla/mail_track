@@ -43,3 +43,6 @@ group :development, :test do
   gem 'spring'
 end
 
+# to hide gmail username and pw
+gem 'figaro'
+
