@@ -46,3 +46,6 @@ end
 # to hide gmail username and pw
 gem 'figaro'
 
+# ui
+gem 'bootstrap-sass'
+

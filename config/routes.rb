@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root 'emails#index'
 
-  resources :emails, only: [:index, :create]
+  resources :emails, only: [:index, :new, :create]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
