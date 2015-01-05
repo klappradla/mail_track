@@ -1,7 +1,7 @@
 class EmailsController < ApplicationController
 
 	def index
-		
+		@emails = Email.all
 	end
 
 	def new
@@ -11,7 +11,8 @@ class EmailsController < ApplicationController
 	def create
 		@email = Email.new(email_params)
 		if @email.save
-			redirect_to root_path, notice: 'Email sent'
+			flash[:success] = 'Email sent'
+			redirect_to root_path
 		else
 			render :new
 		end
