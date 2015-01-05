@@ -11,11 +11,19 @@ class EmailsController < ApplicationController
 	def create
 		@email = Email.new(email_params)
 		if @email.save
-			flash[:success] = 'Email sent'
+			flash[:success] = 'email sent'
 			redirect_to root_path
 		else
 			render :new
 		end
+	end
+
+	def destroy
+		@email = Email.find(params[:id])
+		if @email.destroy
+			flash[:success] = "email deleted"
+		end
+		redirect_to root_path
 	end
 
 
