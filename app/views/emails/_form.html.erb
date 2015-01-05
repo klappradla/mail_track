@@ -1,0 +1,8 @@
+<div class="row">
+		<%= form_for(@email, url: emails_path) do |f| %>
+			<%= render "error_messages", object: f.object %>
+			<%= f.label :recipient %>
+			<%= f.text_field :recipient %>
+			<%= f.submit "Send email", class: "btn btn-primary" %>
+		<% end %>
+</div>
