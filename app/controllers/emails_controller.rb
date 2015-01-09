@@ -13,6 +13,7 @@ class EmailsController < ApplicationController
 		@email = Email.new(email_params)
 		if @email.save
 			flash[:success] = 'email sent'
+			UserMailer.tracking_mail(@email.recipient).deliver_later
 		else
 			flash[:danger] = @email.errors.full_messages.first
 		end

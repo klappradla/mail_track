@@ -1,6 +1,6 @@
 class UserMailer < ApplicationMailer
 
-	def tracking_mail
-		mail(to: 'maxmulatz@gmail.com', subject: 'tryout').deliver
+	def tracking_mail(recipient)
+		mail(to: recipient, subject: 'tryout')
 	end
 end
