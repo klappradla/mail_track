@@ -13,10 +13,10 @@ class EmailsController < ApplicationController
 		@email = Email.new(email_params)
 		if @email.save
 			flash[:success] = 'email sent'
-			redirect_to root_path
 		else
-			render :new
+			flash[:danger] = @email.errors.full_messages.first
 		end
+		redirect_to root_path
 	end
 
 	def destroy
