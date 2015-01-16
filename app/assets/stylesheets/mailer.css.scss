@@ -1,3 +1,36 @@
+// Variables and Mixins
+$white: #ffffff;
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+
+// global
 body {
-	background-color: #ee4c50;
+	margin: 0;
+	padding: 0;
+
+	td {
+		font-family: Verdana, Helvetica, Arial;
+		font-size: 14px; 
+		line-height: 16px;
+		color: $white;
+	}
+}
+
+
+td#wrapper {
+
+	table#content {
+		width: 600px;
+		background-color: #ee4c50;
+
+		table.content-section {
+			padding: 30px 40px 30px 40px;
+		}
+	}
 }
