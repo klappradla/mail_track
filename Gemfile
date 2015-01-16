@@ -53,5 +53,6 @@ gem 'bootstrap-sass'
 gem 'letter_opener', group: :development
 
 # send html email
-gem 'roadie-rails'
-
+#gem 'roadie-rails'
+# use old version of roadie
+gem 'roadie', '<= 2.4.3'
