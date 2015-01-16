@@ -49,3 +49,9 @@ gem 'figaro'
 # ui
 gem 'bootstrap-sass'
 
+# open mails in browser
+gem 'letter_opener', group: :development
+
+# send html email
+gem 'roadie-rails'
+
