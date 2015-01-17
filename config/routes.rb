@@ -4,6 +4,9 @@ Rails.application.routes.draw do
 
   #resources :emails, only: [:index, :new, :create, :destroy]
   resources :emails, only: [:index, :create, :destroy]
+
+  # route for tracking image
+  get '/tracking/:email_id', to: 'tracking#image', as: 'tracking_image'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
