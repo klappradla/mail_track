@@ -50,4 +50,7 @@ Rails.application.configure do
     authentication: 'plain',
     enable_starttls_auto: true
   }
+
+  # to inline images in email
+  config.action_mailer.default_url_options = { host: "localhost", port: 3000 }
 end
