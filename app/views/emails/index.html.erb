@@ -4,12 +4,14 @@
 
 		<thead>
 			<th>recipient</th>
+			<th>opened</th>
 		</thead>
 
 		<tbody>
 		<% @emails.each do |email| %>
 			<tr>
 				<td><%= email.recipient %></td>
+				<td><%= pluralize(email.opened, 'time') %></td>
 				<td>
 					<%= link_to 'delete', email, method: :delete, data: { confirm: 'Are you sure?' } %>
 				</td>

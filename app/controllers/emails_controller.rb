@@ -1,4 +1,5 @@
 class EmailsController < ApplicationController
+	TRACKING_IMAGE_PATH = File.join(Rails.root, "app", "assets", "images", "tracking.gif")
 
 	def index
 		@emails = Email.all
@@ -26,6 +27,12 @@ class EmailsController < ApplicationController
 			flash[:success] = "email deleted"
 		end
 		redirect_to root_path
+	end
+
+	def image
+		email = Email.find params[:email_id]
+		email.increment!(:opened, 1)
+		send_file TRACKING_IMAGE_PATH
 	end
 
 
