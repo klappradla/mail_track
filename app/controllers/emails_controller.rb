@@ -13,6 +13,7 @@ class EmailsController < ApplicationController
 	def create
 		@email = Email.new(email_params)
 		if @email.save
+			@email.add_links
 			flash[:success] = 'email sent'
 			UserMailer.tracking_mail(@email).deliver_later
 		else

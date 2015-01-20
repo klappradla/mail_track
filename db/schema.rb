@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150104153936) do
+ActiveRecord::Schema.define(version: 20150118175211) do
 
   create_table "emails", force: :cascade do |t|
     t.string   "recipient"
@@ -19,5 +19,14 @@ ActiveRecord::Schema.define(version: 20150104153936) do
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end
+
+  create_table "links", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "email_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "links", ["email_id"], name: "index_links_on_email_id"
 
 end
