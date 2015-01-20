@@ -5,6 +5,8 @@
 		<thead>
 			<th>recipient</th>
 			<th>opened</th>
+			<th class="text-center">link one clicks</th>
+			<th class="text-center">link two clicks</th>
 			<th>≠</th>
 		</thead>
 
@@ -13,6 +15,9 @@
 			<tr>
 				<td><%= email.recipient %></td>
 				<td><%= pluralize(email.opened, 'time') %></td>
+				<% email.links.each do |link| %>
+					<td class="text-center"><%= link.clicks %></td>
+				<% end %>
 				<td>
 					<%= link_to 'delete', email, method: :delete, data: { confirm: 'Are you sure?' } %>
 				</td>

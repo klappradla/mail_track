@@ -14,6 +14,6 @@ module LinksHelper
   end
 
   def log_click(url)
-  	puts "hellyeahhellyeahhellyeahhellyeahhellyeah"
+  	Link.find(params[:id]).click
   end
 end
