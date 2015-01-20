@@ -19,4 +19,15 @@
 
 body {
 	padding-top: 60px;
+
+	#home-link {
+		color: #333;
+		text-decoration: none;
+		&:hover {
+			color: #337ab7;
+			text-decoration: none;
+		}
+
+
+	}
 }

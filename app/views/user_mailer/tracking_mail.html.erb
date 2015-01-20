@@ -10,6 +10,30 @@
 	</td>
 </tr>
 <tr>
+	<td>
+		<table class="content-section">
+			<tr>
+				<td>
+					Click those links:			
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+<% @email.links.each do |link| %>
+	<tr>
+		<td>
+			<table class="content-section">
+				<tr>
+					<td>
+						<%= link_to link.name, link_url(link), target: :blank %>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+<% end %>
+<tr>
   <td id="tracking">
   	<img src="<%= tracking_image_url(@email) %>" alt="mail_track" />
   </td>

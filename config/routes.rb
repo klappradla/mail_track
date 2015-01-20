@@ -2,8 +2,9 @@ Rails.application.routes.draw do
 
   root 'emails#index'
 
-  #resources :emails, only: [:index, :new, :create, :destroy]
   resources :emails, only: [:index, :create, :destroy]
+
+  resources :links, only: [:show]
 
   # route for tracking image
   get '/tracking/:email_id', to: 'emails#image', as: 'tracking_image'
