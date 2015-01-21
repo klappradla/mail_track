@@ -31,7 +31,7 @@ class EmailsController < ApplicationController
 	end
 
 	def image
-		email = Email.find params[:email_id]
+		email = Email.find(params[:email_id])
 		email.increment!(:opened, 1)
 		send_file TRACKING_IMAGE_PATH
 	end

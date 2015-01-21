@@ -5,9 +5,11 @@
 		<thead>
 			<th>recipient</th>
 			<th>opened</th>
-			<th class="text-center">link one clicks</th>
-			<th class="text-center">link two clicks</th>
-			<th>≠</th>
+			<th class="text-center">clicks link one</th>
+			<th class="text-center">clicks link two</th>
+			<th class="text-center">
+				<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+			</th>
 		</thead>
 
 		<tbody>
@@ -18,7 +20,7 @@
 				<% email.links.each do |link| %>
 					<td class="text-center"><%= link.clicks %></td>
 				<% end %>
-				<td>
+				<td class="text-center">
 					<%= link_to 'delete', email, method: :delete, data: { confirm: 'Are you sure?' } %>
 				</td>
 			</tr>
