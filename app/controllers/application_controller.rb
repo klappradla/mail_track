@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_filter :track_click
 
+
   private
 
 	def track_click
