@@ -1,14 +1,4 @@
-<tr>
-	<td>
-		<table class="content-section">
-			<tr>
-				<td>
-					Mail by mail_track!			
-				</td>
-			</tr>
-		</table>
-	</td>
-</tr>
+<%= render "header" %>
 <tr>
 	<td>
 		<table class="content-section">
@@ -17,24 +7,10 @@
 					Click those links:			
 				</td>
 			</tr>
+			<% @email.links.each do |link| %>
+				<%= render "link", link: link %>
+			<% end %>
 		</table>
 	</td>
 </tr>
-<% @email.links.each do |link| %>
-	<tr>
-		<td>
-			<table class="content-section">
-				<tr>
-					<td>
-						<%= link_to link.name, tracking_url(link), target: :blank %>
-					</td>
-				</tr>
-			</table>
-		</td>
-	</tr>
-<% end %>
-<tr>
-  <td id="tracking">
-  	<img src="<%= tracking_image_url(@email) %>" alt="mail_track" />
-  </td>
-</tr>
+<%= render "footer", object: @email %>

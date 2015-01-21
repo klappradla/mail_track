@@ -30,7 +30,18 @@ td#wrapper {
 		background-color: #ee4c50;
 
 		table.content-section {
-			padding: 30px 40px 30px 40px;
+			padding: 30px 40px 0px;
+
+			td#header {
+				font-size: 18px;
+			}
+
+			tr.link {
+				td {
+					padding-left: 20px;
+					line-height: 20px;
+				}
+			}
 		}
 
 		td#tracking {
